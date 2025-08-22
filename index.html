@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Proje Gerçeği – Veriye Dayalı Anket & İçgörü</title>
+  <meta name="description" content="Proje Gerçeği: Kitlelerden veri toplayın, temizleyin ve içgörüye dönüştürün. Anket modülü aktif.">
+  <meta property="og:title" content="Proje Gerçeği" />
+  <meta property="og:description" content="Kitlelerden veri toplayın, temizleyin ve içgörüye dönüştürün." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://projegercegi.com" />
+  <link rel="icon" href="favicon.svg" />
+  <style>
+    :root{
+      --bg:#0f172a; --text:#e5e7eb; --muted:#94a3b8;
+      --card:#0b1224cc; --ring:#ffffff1f;
+      --accent:#38bdf8; --accent2:#22d3ee;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 600px at 10% -10%, #22d3ee11, transparent 60%),
+        radial-gradient(900px 500px at 110% 20%, #38bdf811, transparent 60%),
+        var(--bg);
+      display:grid; place-items:center; padding:32px;
+    }
+    main{width:100%; max-width:960px; display:grid; gap:28px; text-align:center}
+    .logo{display:inline-flex; align-items:center; gap:12px; margin-inline:auto;
+      padding:10px 14px; border-radius:16px; background:linear-gradient(145deg,#111827,#0b1224);
+      box-shadow: 0 0 0 1px var(--ring), 0 10px 35px #00000066, inset 0 0 40px #ffffff0a;
+    }
+    .mark{width:28px; height:28px; border-radius:8px; background:conic-gradient(from 140deg, var(--accent), var(--accent2));}
+    .brand{font-weight:700; letter-spacing:.2px; background: linear-gradient(90deg, #fff, #c7d2fe);
+      -webkit-background-clip:text; background-clip:text; color:transparent;}
+    h1{margin:0; font-size:clamp(28px, 5vw, 44px); line-height:1.15}
+    p.lead{margin:0 auto; max-width:62ch; color:var(--muted); font-size:clamp(16px, 2.3vw, 18px); line-height:1.6}
+    .card{margin:4px auto 0; padding:22px; border-radius:20px; background:linear-gradient(180deg, #0b1224cc, #0a1326cc);
+      border:1px solid #ffffff1a; backdrop-filter: blur(6px); display:grid; gap:14px}
+    .row{display:flex; flex-wrap:wrap; gap:12px; justify-content:center}
+    .pill{padding:8px 12px; border-radius:999px; border:1px solid #ffffff1a; color:var(--muted); font-size:14px}
+    .cta{display:inline-flex; align-items:center; justify-content:center; gap:10px; padding:14px 18px;
+      border-radius:14px; font-weight:600; color:#0b1224; background:linear-gradient(90deg, var(--accent), var(--accent2));
+      box-shadow: 0 10px 24px #22d3ee33, 0 0 0 1px #ffffff22 inset; text-decoration:none;
+      transition: transform .12s ease, filter .12s ease}
+    .cta:hover{ transform: translateY(-1px); filter: brightness(1.03) }
+    .links{display:flex; gap:14px; justify-content:center; flex-wrap:wrap}
+    .links a{color:var(--text); opacity:.9; text-decoration:none; border-bottom:1px dashed #ffffff33}
+    .links a:hover{opacity:1}
+    .footer{margin-top:6px; color:var(--muted); font-size:14px}
+  </style>
+</head>
+<body>
+  <main>
+    <div class="logo">
+      <span class="mark" aria-hidden="true"></span>
+      <span class="brand">Proje Gerçeği</span>
+    </div>
+
+    <h1>Veriye dayalı <span style="white-space:nowrap">anket &amp; içgörü</span> platformu</h1>
+    <p class="lead">
+      Kitlelerden veri toplayın, temizleyin ve net içgörülere dönüştürün.
+      Şu an anket modülümüz açık—geri kalan ürün sayfası üzerinde çalışıyoruz.
+    </p>
+
+    <div class="card">
+      <div class="row">
+        <span class="pill">⚡ Hızlı yayınlama</span>
+        <span class="pill">📊 Canlı sonuçlar</span>
+        <span class="pill">🔒 Gizlilik odaklı</span>
+      </div>
+      <a class="cta" href="https://anket.projegercegi.com" rel="noopener">Ankete Katıl</a>
+      <div class="links">
+        <a href="mailto:hello@projegercegi.com">hello@projegercegi.com</a>
+        <a href="https://trend25.github.io/PYA/" rel="noopener">GitHub Pages (anket)</a>
+      </div>
+    </div>
+
+    <p class="footer">© <span id="year"></span> Proje Gerçeği · Tüm hakları saklıdır.</p>
+  </main>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
