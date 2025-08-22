@@ -3,84 +3,132 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Proje Gerçeği – Veriye Dayalı Anket & İçgörü</title>
-  <meta name="description" content="Proje Gerçeği: Kitlelerden veri toplayın, temizleyin ve içgörüye dönüştürün. Anket modülü aktif.">
-  <meta property="og:title" content="Proje Gerçeği" />
-  <meta property="og:description" content="Kitlelerden veri toplayın, temizleyin ve içgörüye dönüştürün." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://projegercegi.com" />
-  <link rel="icon" href="favicon.svg" />
+  <title>Proje Gerçeği — Proje Yönetimi İçgörüleri</title>
+  <meta name="description" content="Proje Gerçeği: Proje yöneticilerinin gerçek deneyimlerinden derlenen içgörüler. Anketimize katılın.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%230ea5e9'/%3E%3Cstop offset='1' stop-color='%2306b6d4'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='6' y='6' width='52' height='52' rx='12' fill='url(%23g)'/%3E%3Cpath d='M18 34h28M18 24h18M18 44h22' stroke='%23fff' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
   <style>
     :root{
-      --bg:#0f172a; --text:#e5e7eb; --muted:#94a3b8;
-      --card:#0b1224cc; --ring:#ffffff1f;
-      --accent:#38bdf8; --accent2:#22d3ee;
+      --bg:#ffffff; --fg:#0f172a; --muted:#475569; --line:#e2e8f0;
+      --accent:#0ea5e9; --accent2:#06b6d4; --card:#f8fafc;
     }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-      color:var(--text);
-      background:
-        radial-gradient(1200px 600px at 10% -10%, #22d3ee11, transparent 60%),
-        radial-gradient(900px 500px at 110% 20%, #38bdf811, transparent 60%),
-        var(--bg);
-      display:grid; place-items:center; padding:32px;
+    @media (prefers-color-scheme: dark){
+      :root{ --bg:#0b1020; --fg:#e5e7eb; --muted:#94a3b8; --line:#1f2937; --accent:#38bdf8; --accent2:#22d3ee; --card:#0f172a; }
     }
-    main{width:100%; max-width:960px; display:grid; gap:28px; text-align:center}
-    .logo{display:inline-flex; align-items:center; gap:12px; margin-inline:auto;
-      padding:10px 14px; border-radius:16px; background:linear-gradient(145deg,#111827,#0b1224);
-      box-shadow: 0 0 0 1px var(--ring), 0 10px 35px #00000066, inset 0 0 40px #ffffff0a;
-    }
-    .mark{width:28px; height:28px; border-radius:8px; background:conic-gradient(from 140deg, var(--accent), var(--accent2));}
-    .brand{font-weight:700; letter-spacing:.2px; background: linear-gradient(90deg, #fff, #c7d2fe);
-      -webkit-background-clip:text; background-clip:text; color:transparent;}
-    h1{margin:0; font-size:clamp(28px, 5vw, 44px); line-height:1.15}
-    p.lead{margin:0 auto; max-width:62ch; color:var(--muted); font-size:clamp(16px, 2.3vw, 18px); line-height:1.6}
-    .card{margin:4px auto 0; padding:22px; border-radius:20px; background:linear-gradient(180deg, #0b1224cc, #0a1326cc);
-      border:1px solid #ffffff1a; backdrop-filter: blur(6px); display:grid; gap:14px}
-    .row{display:flex; flex-wrap:wrap; gap:12px; justify-content:center}
-    .pill{padding:8px 12px; border-radius:999px; border:1px solid #ffffff1a; color:var(--muted); font-size:14px}
-    .cta{display:inline-flex; align-items:center; justify-content:center; gap:10px; padding:14px 18px;
-      border-radius:14px; font-weight:600; color:#0b1224; background:linear-gradient(90deg, var(--accent), var(--accent2));
-      box-shadow: 0 10px 24px #22d3ee33, 0 0 0 1px #ffffff22 inset; text-decoration:none;
-      transition: transform .12s ease, filter .12s ease}
-    .cta:hover{ transform: translateY(-1px); filter: brightness(1.03) }
-    .links{display:flex; gap:14px; justify-content:center; flex-wrap:wrap}
-    .links a{color:var(--text); opacity:.9; text-decoration:none; border-bottom:1px dashed #ffffff33}
-    .links a:hover{opacity:1}
-    .footer{margin-top:6px; color:var(--muted); font-size:14px}
+    *{box-sizing:border-box} html,body{height:100%}
+    body{margin:0; font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial; background:var(--bg); color:var(--fg)}
+    .wrap{max-width:960px; margin:0 auto; padding:24px}
+    header{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:10px 0 24px; border-bottom:1px solid var(--line)}
+    .brand{display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:.2px}
+    .mark{width:22px; height:22px; border-radius:6px; background:linear-gradient(135deg,var(--accent),var(--accent2))}
+    .nav a{font-size:14px; color:var(--muted); text-decoration:none; border-bottom:1px dashed var(--line)}
+    main{padding:28px 0 40px; display:grid; gap:40px}
+    .hero{display:grid; grid-template-columns:1.1fr .9fr; gap:28px; align-items:center}
+    .hero h1{font-size:clamp(28px,4.8vw,44px); line-height:1.15; margin:0 0 12px}
+    .hero p{margin:0 0 16px; color:var(--muted); font-size:clamp(15px,2.6vw,18px)}
+    .cta{display:flex; gap:12px; flex-wrap:wrap}
+    .btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; font-weight:600; padding:12px 16px; border-radius:12px; text-decoration:none; color:white; background:linear-gradient(90deg,var(--accent),var(--accent2))}
+    .btn.secondary{background:transparent; color:var(--fg); border:1px solid var(--line)}
+    .card{background:var(--card); border:1px solid var(--line); border-radius:16px; padding:18px}
+    .vis{width:100%; height:auto; display:block}
+    .features{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+    .feature{border:1px solid var(--line); border-radius:14px; padding:16px; display:grid; gap:8px; background:var(--bg)}
+    .feature svg{width:28px; height:28px}
+    .feature h3{margin:0; font-size:16px}
+    .feature p{margin:0; color:var(--muted); font-size:14px}
+    .gallery{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
+    .gallery .item{border:1px solid var(--line); border-radius:14px; padding:12px; background:var(--bg)}
+    footer{padding:20px 0 36px; color:var(--muted); font-size:14px; border-top:1px solid var(--line)}
+    .links{display:flex; gap:12px; flex-wrap:wrap}
+    .links a{color:inherit; text-decoration:none; border-bottom:1px dashed var(--line)}
+    @media (max-width:900px){ .hero{grid-template-columns:1fr} .features,.gallery{grid-template-columns:1fr 1fr} }
+    @media (max-width:580px){ .features,.gallery{grid-template-columns:1fr} }
   </style>
 </head>
 <body>
-  <main>
-    <div class="logo">
-      <span class="mark" aria-hidden="true"></span>
-      <span class="brand">Proje Gerçeği</span>
-    </div>
+  <div class="wrap">
+    <header>
+      <div class="brand"><span class="mark" aria-hidden="true"></span> Proje Gerçeği</div>
+      <nav class="nav"><a href="mailto:hello@projegercegi.com">İletişim</a></nav>
+    </header>
 
-    <h1>Veriye dayalı <span style="white-space:nowrap">anket &amp; içgörü</span> platformu</h1>
-    <p class="lead">
-      Kitlelerden veri toplayın, temizleyin ve net içgörülere dönüştürün.
-      Şu an anket modülümüz açık—geri kalan ürün sayfası üzerinde çalışıyoruz.
-    </p>
+    <main>
+      <!-- HERO -->
+      <section class="hero" aria-label="Tanıtım">
+        <div>
+          <h1>Proje yönetimi içgörüleri, gerçek deneyimlerden</h1>
+          <p>Türkiye’deki proje yöneticilerinin krizleri nasıl atlattığını, hangi yöntemleri işe koyduğunu ve hangi dersleri çıkardığını bir araya getiriyoruz. Katkınız önemli.</p>
+          <div class="cta">
+            <a class="btn" href="https://anket.projegercegi.com" rel="noopener">Ankete Katıl</a>
+            <a class="btn secondary" href="https://trend25.github.io/PYA/" rel="noopener">GitHub Pages sürümü</a>
+          </div>
+        </div>
+        <div class="card" aria-hidden="true">
+          <!-- GANTT (hero görseli) -->
+          <svg class="vis" viewBox="0 0 640 360">
+            <g fill="none" stroke="#e2e8f0" stroke-width="1.5">
+              <path d="M40 70H600M40 120H600M40 170H600M40 220H600M40 270H600"/>
+            </g>
+            <g>
+              <rect x="80" y="55" width="160" height="30" rx="6" fill="#0ea5e9"/>
+              <rect x="280" y="105" width="200" height="30" rx="6" fill="#06b6d4"/>
+              <rect x="140" y="155" width="140" height="30" rx="6" fill="#38bdf8"/>
+              <rect x="320" y="205" width="180" height="30" rx="6" fill="#22d3ee"/>
+              <rect x="120" y="255" width="220" height="30" rx="6" fill="#0891b2"/>
+            </g>
+            <g fill="none" stroke="#94a3b8" stroke-width="2" opacity=".8">
+              <path d="M160 70v-14M360 120v-14M210 170v-14M410 220v-14M260 270v-14"/>
+            </g>
+          </svg>
+        </div>
+      </section>
 
-    <div class="card">
-      <div class="row">
-        <span class="pill">⚡ Hızlı yayınlama</span>
-        <span class="pill">📊 Canlı sonuçlar</span>
-        <span class="pill">🔒 Gizlilik odaklı</span>
-      </div>
-      <a class="cta" href="https://anket.projegercegi.com" rel="noopener">Ankete Katıl</a>
+      <!-- ÖZELLİKLER -->
+      <section class="features" aria-label="Özellikler">
+        <div class="feature">
+          <!-- Kanban ikon -->
+          <svg viewBox="0 0 64 64" aria-hidden="true"><rect x="6" y="10" width="14" height="44" rx="3" fill="#0ea5e9"/><rect x="25" y="10" width="14" height="44" rx="3" fill="#22d3ee"/><rect x="44" y="10" width="14" height="44" rx="3" fill="#38bdf8"/><circle cx="13" cy="18" r="2" fill="#fff"/><circle cx="32" cy="28" r="2" fill="#fff"/><circle cx="51" cy="38" r="2" fill="#fff"/></svg>
+          <h3>Pratik & Hızlı</h3>
+          <p>5–10 dakikada tamamlanan akış, kaydettikçe ilerler.</p>
+        </div>
+        <div class="feature">
+          <!-- Checklist ikon -->
+          <svg viewBox="0 0 64 64" aria-hidden="true"><rect x="10" y="8" width="44" height="48" rx="6" fill="none" stroke="#0ea5e9" stroke-width="2"/><path d="M22 22h24M22 32h24M22 42h24" stroke="#111827" stroke-width="3" opacity=".85"/><path d="M16 22l4 4 8-8M16 32l4 4 8-8M16 42l4 4 8-8" fill="none" stroke="#10b981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <h3>Yapılandırılmış</h3>
+          <p>Kriz, insan, sektör başlıklarında tutarlı hikâye şablonları.</p>
+        </div>
+        <div class="feature">
+          <!-- Insight ikon -->
+          <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M18 46c0-8.8 7.2-16 16-16s16 7.2 16 16" fill="none" stroke="#0ea5e9" stroke-width="3"/><circle cx="34" cy="22" r="8" fill="#38bdf8"/><path d="M14 50h40" stroke="#e2e8f0" stroke-width="2"/></svg>
+          <h3>İçgörü Odaklı</h3>
+          <p>Anonimleştirilmiş çıktılar; metrikler ve alıntılarla raporlama.</p>
+        </div>
+      </section>
+
+      <!-- Görsel Galeri -->
+      <section class="gallery" aria-label="Proje yönetimi görselleri">
+        <div class="item" aria-hidden="true">
+          <!-- Timeline -->
+          <svg class="vis" viewBox="0 0 640 240"><path d="M40 120H600" stroke="#e2e8f0" stroke-width="2"/><g><circle cx="120" cy="120" r="10" fill="#0ea5e9"/><text x="120" y="80" text-anchor="middle" fill="#64748b" font-size="14">Kickoff</text><circle cx="260" cy="120" r="10" fill="#06b6d4"/><text x="260" y="80" text-anchor="middle" fill="#64748b" font-size="14">Plan</text><circle cx="360" cy="120" r="10" fill="#38bdf8"/><text x="360" y="80" text-anchor="middle" fill="#64748b" font-size="14">Build</text><circle cx="460" cy="120" r="10" fill="#22d3ee"/><text x="460" y="80" text-anchor="middle" fill="#64748b" font-size="14">Test</text><circle cx="560" cy="120" r="10" fill="#0891b2"/><text x="560" y="80" text-anchor="middle" fill="#64748b" font-size="14">Release</text></g></svg>
+        </div>
+        <div class="item" aria-hidden="true">
+          <!-- Risk matrisi -->
+          <svg class="vis" viewBox="0 0 640 240"><defs><linearGradient id="rg" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#10b981"/><stop offset="1" stop-color="#ef4444"/></linearGradient></defs><rect x="40" y="40" width="560" height="160" rx="10" fill="url(#rg)" opacity=".12"/><g stroke="#e2e8f0" stroke-width="2"><path d="M40 120H600M120 40V200M240 40V200M360 40V200M480 40V200"/></g><g fill="#0ea5e9"><circle cx="160" cy="160" r="8"/><circle cx="300" cy="110" r="8"/><circle cx="420" cy="90" r="8"/><circle cx="520" cy="70" r="8"/></g></svg>
+        </div>
+        <div class="item" aria-hidden="true">
+          <!-- Paydaş haritası -->
+          <svg class="vis" viewBox="0 0 640 240"><circle cx="320" cy="120" r="26" fill="#0ea5e9"/><g fill="#38bdf8"><circle cx="160" cy="60" r="18"/><circle cx="480" cy="60" r="18"/><circle cx="140" cy="170" r="18"/><circle cx="500" cy="170" r="18"/></g><g stroke="#94a3b8" stroke-width="2" fill="none"><path d="M320 120L160 60M320 120L480 60M320 120L140 170M320 120L500 170"/></g></svg>
+        </div>
+      </section>
+    </main>
+
+    <footer>
       <div class="links">
         <a href="mailto:hello@projegercegi.com">hello@projegercegi.com</a>
-        <a href="https://trend25.github.io/PYA/" rel="noopener">GitHub Pages (anket)</a>
+        <a href="https://anket.projegercegi.com" rel="noopener">Ankete Katıl</a>
       </div>
-    </div>
-
-    <p class="footer">© <span id="year"></span> Proje Gerçeği · Tüm hakları saklıdır.</p>
-  </main>
-
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+      <div>© <span id="y"></span> Proje Gerçeği</div>
+    </footer>
+  </div>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
